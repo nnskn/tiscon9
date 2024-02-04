@@ -120,6 +120,22 @@ public class EstimateDao {
         return parameterJdbcTemplate.query(sql,
                 BeanPropertyRowMapper.newInstance(MoveMonth.class));
     }
+    /**
+     * ユーザが選択した引越し月を出力する．
+     *
+     * @param moveMonthID 引越し月
+     */
+    public double getN(String moveMonthId) {
+        //季節係数(3~4月:1.5,9月:1.2,other:1)
+        double N=1.0;
+        if (moveMonthId.equals("03")||moveMonthId.equals("04")){
+            N=1.5;
+        }else if(moveMonthId.equals("09")){
+            N=1.2;
+        }
+        
+        return N;
+    }
 
     /**
      * 荷物ごとの段ボール数を取得する。
