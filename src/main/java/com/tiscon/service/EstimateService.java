@@ -141,21 +141,7 @@ public class EstimateService {
         }
 
 
-        if (dto.getBoxCollect()) {
-            priceForOptionalService += estimateDAO.getPricePerOptionalService(OptionalServiceType.BOX_COLLECT.getCode());
-        }
-
-        if (dto.getNewLifeSet()) {
-            priceForOptionalService += estimateDAO.getPricePerOptionalService(OptionalServiceType.NEW_LIFE_SET.getCode());
-        }
-
-        if (dto.getFurnitureSetting()) {
-            priceForOptionalService += estimateDAO.getPricePerOptionalService(OptionalServiceType.FURNITURE_SETTING.getCode());
-        }
-
-        if (dto.getPublicFee()) {
-            priceForOptionalService += estimateDAO.getPricePerOptionalService(OptionalServiceType.PUBLIC_FEE.getCode());
-        }
+       
 
 
         return (int) Math.floor(N * (priceForDistance + pricePerTruck) + priceForOptionalService);
