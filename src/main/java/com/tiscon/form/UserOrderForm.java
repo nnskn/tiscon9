@@ -55,6 +55,18 @@ public class UserOrderForm {
     @NotNull
     private boolean washingMachineInstallation;
 
+    @NotNull
+    private boolean boxCollect;
+
+    @NotNull
+    private boolean newLifeSet;
+
+    @NotNull
+    private boolean furnitureSetting;
+
+    @NotNull
+    private boolean publicFee;
+
     public String getCustomerName() {
         return customerName;
     }
@@ -149,5 +161,37 @@ public class UserOrderForm {
 
     public void setWashingMachineInstallation(boolean washingMachineInstallation) {
         this.washingMachineInstallation = washingMachineInstallation;
+    }
+
+    public boolean getBoxCollect() {
+        return boxCollect;
+    }
+
+    public void setBoxCollect(boolean boxCollect) {
+        this.boxCollect = boxCollect;
+    }
+
+    public boolean getNewLifeSet() {
+        return newLifeSet;
+    }
+
+    public void setNewLifeSet(boolean newLifeSet) {
+        this.newLifeSet = newLifeSet;
+    }
+
+    public boolean getFurnitureSetting() {
+        return furnitureSetting;
+    }
+
+    public void setFurnitureSetting(boolean furnitureSetting) {
+        this.furnitureSetting = furnitureSetting;
+    }
+
+    public boolean getPublicFee() {
+        return publicFee;
+    }
+
+    public void setPublicFee(boolean publicFee) {
+        this.publicFee = publicFee;
     }
 }
