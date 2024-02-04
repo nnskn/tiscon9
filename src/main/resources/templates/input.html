@@ -105,6 +105,7 @@
                 th:errors="*{washingMachine}"  style="color:red"></div>
         <div class="form-group">
           <label for="washingMachineInstallation">洗濯機の設置工事申し込み</label>
+          <span> ￥3,000</span>
           <select id="washingMachineInstallation" name="washingMachineInstallation" class="form-control" th:field="*{washingMachineInstallation}">
             <option th:value="false" th:text="なし">なし</option>
             <option th:value="true" th:text="あり">あり</option>
@@ -112,6 +113,7 @@
         </div>
         <div class="form-group">
           <label for="boxCollect">段ボール回収</label>
+          <span> ￥1,000</span>
           <select id="boxCollect" name="boxCollect" class="form-control" th:field="*{boxCollect}">
             <option th:value="false" th:text="なし">なし</option>
             <option th:value="true" th:text="あり">あり</option>
@@ -119,7 +121,7 @@
         </div>
         <div class="form-group">
           <label for="newLifeSet">新生活セット</label>
-          <span>（お皿、コップ、お箸など小物のセットです）</span>
+          <span>（お皿、コップ、お箸など小物のセットです）￥5,000</span>
           <select id="newLifeSet" name="newLifeSet" class="form-control" th:field="*{newLifeSet}">
             <option th:value="false" th:text="なし">なし</option>
             <option th:value="true" th:text="あり">あり</option>
@@ -127,6 +129,7 @@
         </div>
         <div class="form-group">
           <label for="furnitureSetting">家具配置サービス</label>
+          <span> ￥4,000</span>
           <select id="furnitureSetting" name="furnitureSetting" class="form-control" th:field="*{furnitureSetting}">
             <option th:value="false" th:text="なし">なし</option>
             <option th:value="true" th:text="あり">あり</option>
@@ -134,6 +137,7 @@
         </div>
         <div class="form-group">
           <label for="publicFee">公共料金サービス</label>
+          <span> ￥2,000</span>
           <select id="publicFee" name="publicFee" class="form-control" th:field="*{publicFee}">
             <option th:value="false" th:text="なし">なし</option>
             <option th:value="true" th:text="あり">あり</option>
