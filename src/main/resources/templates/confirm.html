@@ -105,6 +105,13 @@
         <tr class="text-error" th:if="${#fields.hasErrors('newAddress')}" 
         style="color:red">
         <td th:errors="*{newAddress}"></td>
+        <tr>
+          <th>引越月</th> 
+          <td> <span th:each="moveMonth: ${moveMonth}" th:text="${moveMonth.moveMonthName}" th:if="${moveMonth.moveMonthId}==*{moveMonthId}">大阪</span></td> 
+          <input type="hidden" name="moveMonthId" id="moveMonthId" th:value="*{moveMonthId}"/>
+        </tr> 
+        
+
 </tr>
         </tbody>
       </table>

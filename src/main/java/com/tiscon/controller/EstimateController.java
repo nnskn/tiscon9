@@ -1,9 +1,13 @@
 package com.tiscon.controller;
 
 import com.tiscon.dao.EstimateDao;
+import com.tiscon.domain.MoveMonth;
 import com.tiscon.dto.UserOrderDto;
 import com.tiscon.form.UserOrderForm;
 import com.tiscon.service.EstimateService;
+
+import java.util.List;
+
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -52,7 +56,10 @@ public class EstimateController {
             model.addAttribute("userOrderForm", new UserOrderForm());
         }
 
+        List<MoveMonth> monthList = estimateDAO.getAllMoveMonth();
+
         model.addAttribute("prefectures", estimateDAO.getAllPrefectures());
+        model.addAttribute("moveMonth", estimateDAO.getAllMoveMonth());
         return "input";
     }
 
@@ -79,10 +86,12 @@ public class EstimateController {
         if (result.hasErrors()) {
 
             model.addAttribute("prefectures", estimateDAO.getAllPrefectures());
+            model.addAttribute("moveMonth", estimateDAO.getAllMoveMonth());
             model.addAttribute("userOrderForm", userOrderForm);
             return "input";
         }
         model.addAttribute("prefectures", estimateDAO.getAllPrefectures());
+        model.addAttribute("moveMonth", estimateDAO.getAllMoveMonth());
         model.addAttribute("userOrderForm", userOrderForm);
         return "confirm";
     }
@@ -97,6 +106,7 @@ public class EstimateController {
     @PostMapping(value = "result", params = "backToInput")
     String backToInput(UserOrderForm userOrderForm, Model model) {
         model.addAttribute("prefectures", estimateDAO.getAllPrefectures());
+        model.addAttribute("moveMonth", estimateDAO.getAllMoveMonth());
         model.addAttribute("userOrderForm", userOrderForm);
         return "input";
     }
@@ -111,6 +121,7 @@ public class EstimateController {
     @PostMapping(value = "order", params = "backToConfirm")
     String backToConfirm(UserOrderForm userOrderForm, Model model) {
         model.addAttribute("prefectures", estimateDAO.getAllPrefectures());
+        model.addAttribute("moveMonth", estimateDAO.getAllMoveMonth());
         model.addAttribute("userOrderForm", userOrderForm);
         return "confirm";
     }
@@ -128,6 +139,7 @@ public class EstimateController {
         if (result.hasErrors()) {
 
             model.addAttribute("prefectures", estimateDAO.getAllPrefectures());
+            model.addAttribute("moveMonth", estimateDAO.getAllMoveMonth());
             model.addAttribute("userOrderForm", userOrderForm);
             return "confirm";
         }
@@ -138,6 +150,7 @@ public class EstimateController {
         Integer price = estimateService.getPrice(dto);
 
         model.addAttribute("prefectures", estimateDAO.getAllPrefectures());
+        model.addAttribute("moveMonth", estimateDAO.getAllMoveMonth());
         model.addAttribute("userOrderForm", userOrderForm);
         model.addAttribute("price", price);
         return "result";
@@ -156,6 +169,7 @@ public class EstimateController {
         if (result.hasErrors()) {
 
             model.addAttribute("prefectures", estimateDAO.getAllPrefectures());
+            model.addAttribute("moveMonth", estimateDAO.getAllMoveMonth());
             model.addAttribute("userOrderForm", userOrderForm);
             return "confirm";
         }
