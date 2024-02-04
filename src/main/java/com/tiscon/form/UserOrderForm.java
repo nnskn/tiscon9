@@ -34,6 +34,9 @@ public class UserOrderForm {
     private String newPrefectureId;
 
     @NotBlank
+    private String moveMonthId;
+
+    @NotBlank
     private String newAddress;
 
     @Numeric
@@ -103,6 +106,14 @@ public class UserOrderForm {
         this.newPrefectureId = newPrefectureId;
     }
 
+    public String getMoveMonthId() {
+        return moveMonthId;
+    }
+
+    public void setMoveMonthId(String moveMonthId) {
+        this.moveMonthId = moveMonthId;
+    }
+    
     public String getNewAddress() {
         return newAddress;
     }

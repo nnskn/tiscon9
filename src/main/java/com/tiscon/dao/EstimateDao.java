@@ -71,6 +71,7 @@ public class EstimateDao {
         return parameterJdbcTemplate.batchUpdate(sql, batch);
     }
 
+
     /**
      * 都道府県テーブルに登録されているすべての都道府県を取得する。
      *
@@ -81,6 +82,7 @@ public class EstimateDao {
         return parameterJdbcTemplate.query(sql,
                 BeanPropertyRowMapper.newInstance(Prefecture.class));
     }
+
 
     /**
      * 都道府県間の距離を取得する。
@@ -107,6 +109,16 @@ public class EstimateDao {
             distance = 0;
         }
         return distance;
+    }
+        /**
+     *引越月に登録されているすべての引越月を取得する。
+     *
+     * @return すべての引越月
+     */
+    public List<MoveMonth> getAllMoveMonth() {
+        String sql = "SELECT MOVE_MONTH_ID, MOVE_MONTH_NAME FROM MOVEMONTH";
+        return parameterJdbcTemplate.query(sql,
+                BeanPropertyRowMapper.newInstance(MoveMonth.class));
     }
 
     /**

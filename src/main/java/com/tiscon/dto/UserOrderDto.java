@@ -14,6 +14,8 @@ public class UserOrderDto {
 
     private String newPrefectureId;
 
+    private String moveMonthId;
+
     private String newAddress;
 
     private String box;
@@ -72,6 +74,15 @@ public class UserOrderDto {
 
     public void setNewPrefectureId(String newPrefectureId) {
         this.newPrefectureId = newPrefectureId;
+    }
+
+    
+    public String getMoveMonthId() {
+        return moveMonthId;
+    }
+
+    public void setMoveMonthId(String moveMonthId) {
+        this.moveMonthId = moveMonthId;
     }
 
     public String getNewAddress() {

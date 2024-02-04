@@ -1,9 +1,13 @@
 package com.tiscon.controller;
 
 import com.tiscon.dao.EstimateDao;
+import com.tiscon.domain.MoveMonth;
 import com.tiscon.dto.UserOrderDto;
 import com.tiscon.form.UserOrderForm;
 import com.tiscon.service.EstimateService;
+
+import java.util.List;
+
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -52,7 +56,10 @@ public class EstimateController {
             model.addAttribute("userOrderForm", new UserOrderForm());
         }
 
+        List<MoveMonth> monthList = estimateDAO.getAllMoveMonth();
+
         model.addAttribute("prefectures", estimateDAO.getAllPrefectures());
+        model.addAttribute("moveMonth", estimateDAO.getAllMoveMonth());
         return "input";
     }
 
