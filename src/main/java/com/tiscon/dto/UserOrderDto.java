@@ -28,6 +28,14 @@ public class UserOrderDto {
 
     private boolean washingMachineInstallation;
 
+    private boolean boxCollect;
+
+    private boolean newLifeSet;
+
+    private boolean furnitureSetting;
+
+    private boolean publicFee;
+
     public String getCustomerName() {
         return customerName;
     }
@@ -131,5 +139,37 @@ public class UserOrderDto {
 
     public void setWashingMachineInstallation(Boolean washingMachineInstallation) {
         this.washingMachineInstallation = washingMachineInstallation;
+    }
+
+    public boolean getBoxCollect() {
+        return boxCollect;
+    }
+
+    public void setBoxCollect(Boolean boxCollect) {
+        this.boxCollect = boxCollect;
+    }
+
+    public boolean getNewLifeSet() {
+        return newLifeSet;
+    }
+
+    public void setNewLifeSet(Boolean newLifeSet) {
+        this.newLifeSet = newLifeSet;
+    }
+
+    public boolean getFurnitureSetting() {
+        return furnitureSetting;
+    }
+
+    public void setFurnitureSetting(Boolean furnitureSetting) {
+        this.furnitureSetting = furnitureSetting;
+    }
+
+    public boolean getPublicFee() {
+        return publicFee;
+    }
+
+    public void setPublicFee(Boolean publicFee) {
+        this.publicFee = publicFee;
     }
 }

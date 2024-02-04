@@ -54,6 +54,34 @@ public class EstimateService {
             estimateDAO.insertCustomersOptionService(washingMachine);
         }
 
+        if (dto.getBoxCollect()) {
+            CustomerOptionService boxCollect = new CustomerOptionService();
+            boxCollect.setCustomerId(customer.getCustomerId());
+            boxCollect.setServiceId(OptionalServiceType.WASHING_MACHINE.getCode());
+            estimateDAO.insertCustomersOptionService(boxCollect);
+        }
+
+        if (dto.getNewLifeSet()) {
+            CustomerOptionService newLifeSet = new CustomerOptionService();
+            newLifeSet.setCustomerId(customer.getCustomerId());
+            newLifeSet.setServiceId(OptionalServiceType.NEW_LIFE_SET.getCode());
+            estimateDAO.insertCustomersOptionService(newLifeSet);
+        }
+
+        if (dto.getFurnitureSetting()) {
+            CustomerOptionService furnitureSetting = new CustomerOptionService();
+            furnitureSetting.setCustomerId(customer.getCustomerId());
+            furnitureSetting.setServiceId(OptionalServiceType.FURNITURE_SETTING.getCode());
+            estimateDAO.insertCustomersOptionService(furnitureSetting);
+        }
+
+        if (dto.getPublicFee()) {
+            CustomerOptionService publicFee = new CustomerOptionService();
+            publicFee.setCustomerId(customer.getCustomerId());
+            publicFee.setServiceId(OptionalServiceType.FURNITURE_SETTING.getCode());
+            estimateDAO.insertCustomersOptionService(publicFee);
+        }
+
         List<CustomerPackage> packageList = new ArrayList<>();
 
         packageList.add(new CustomerPackage(customer.getCustomerId(), PackageType.BOX.getCode(), dto.getBox()));
@@ -93,8 +121,42 @@ public class EstimateService {
         int priceForOptionalService = 0;
 
         if (dto.getWashingMachineInstallation()) {
-            priceForOptionalService = estimateDAO.getPricePerOptionalService(OptionalServiceType.WASHING_MACHINE.getCode());
+            priceForOptionalService += estimateDAO.getPricePerOptionalService(OptionalServiceType.WASHING_MACHINE.getCode());
         }
+
+        if (dto.getBoxCollect()) {
+            priceForOptionalService += estimateDAO.getPricePerOptionalService(OptionalServiceType.BOX_COLLECT.getCode());
+        }
+
+        if (dto.getNewLifeSet()) {
+            priceForOptionalService += estimateDAO.getPricePerOptionalService(OptionalServiceType.NEW_LIFE_SET.getCode());
+        }
+
+        if (dto.getFurnitureSetting()) {
+            priceForOptionalService += estimateDAO.getPricePerOptionalService(OptionalServiceType.FURNITURE_SETTING.getCode());
+        }
+
+        if (dto.getPublicFee()) {
+            priceForOptionalService += estimateDAO.getPricePerOptionalService(OptionalServiceType.PUBLIC_FEE.getCode());
+        }
+
+
+        if (dto.getBoxCollect()) {
+            priceForOptionalService += estimateDAO.getPricePerOptionalService(OptionalServiceType.BOX_COLLECT.getCode());
+        }
+
+        if (dto.getNewLifeSet()) {
+            priceForOptionalService += estimateDAO.getPricePerOptionalService(OptionalServiceType.NEW_LIFE_SET.getCode());
+        }
+
+        if (dto.getFurnitureSetting()) {
+            priceForOptionalService += estimateDAO.getPricePerOptionalService(OptionalServiceType.FURNITURE_SETTING.getCode());
+        }
+
+        if (dto.getPublicFee()) {
+            priceForOptionalService += estimateDAO.getPricePerOptionalService(OptionalServiceType.PUBLIC_FEE.getCode());
+        }
+
 
         return (int) Math.floor(N * (priceForDistance + pricePerTruck) + priceForOptionalService);
     }

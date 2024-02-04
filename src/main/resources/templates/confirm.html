@@ -163,6 +163,26 @@
             <td><span th:text="*{washingMachineInstallation} ? 'あり' : 'なし'"></span></td>
             <input type="hidden" name="washingMachineInstallation" id="washingMachineInstallation" th:value="*{washingMachineInstallation}"/>
           </tr>
+          <tr>
+            <th>段ボール回収</th>
+            <td><span th:text="*{boxCollect} ? 'あり' : 'なし'"></span></td>
+            <input type="hidden" name="boxCollect" id="boxCollect" th:value="*{boxCollect}"/>
+          </tr>
+          <tr>
+            <th>新生活セット</th>
+            <td><span th:text="*{newLifeSet} ? 'あり' : 'なし'"></span></td>
+            <input type="hidden" name="newLifeSet" id="newLifeSet" th:value="*{newLifeSet}"/>
+          </tr>
+          <tr>
+            <th>家具配置サービス</th>
+            <td><span th:text="*{furnitureSetting} ? 'あり' : 'なし'"></span></td>
+            <input type="hidden" name="furnitureSetting" id="furnitureSetting" th:value="*{furnitureSetting}"/>
+          </tr>
+          <tr>
+            <th>公共料金サービス</th>
+            <td><span th:text="*{publicFee} ? 'あり' : 'なし'"></span></td>
+            <input type="hidden" name="publicFee" id="publicFee" th:value="*{publicFee}"/>
+          </tr>
         </tbody>
       </table>
       <div class="form-group">

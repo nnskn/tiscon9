@@ -8,7 +8,11 @@ package com.tiscon.code;
 public enum OptionalServiceType implements CodeEnum {
 
     /** 洗濯機取り付け */
-    WASHING_MACHINE(1, "洗濯機取り付け");
+    WASHING_MACHINE(1, "洗濯機取り付け"), BOX_COLLECT(2,"段ボール回収"), 
+    NEW_LIFE_SET(3,"新生活セット"),FURNITURE_SETTING(4,"家具配置サービス"),
+    PUBLIC_FEE(5,"公共料金サービス");
+
+    // BOX_COLLECT(2, "段ボール回収");
 
     /** オプションサービスのラベル */
     private final String label;
